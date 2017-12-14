@@ -1,11 +1,10 @@
-
-
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class login
@@ -37,7 +36,11 @@ public class login extends HttpServlet {
 		// TODO Auto-generated method stub
 		//doGet(request, response);
 		if (request.getParameter("login").compareTo("admin")==0 && (request.getParameter("password").compareTo("admin")==0)) {
-			response.sendRedirect("http://www.marca.es");
+			HttpSession session = request.getSession();
+			session.setAttribute("login", "admin");
+			String name=request.getParameter("login");
+			response.sendRedirect("acceso_portal.jsp");
+			
 		}
 		else {
 			response.sendRedirect("index.html");
