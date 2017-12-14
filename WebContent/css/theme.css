@@ -4,5 +4,9 @@ p {
 	
 color: red;}
 
-.header {background-color: "red";
+header {background-color: red;
+}
+
+.form-group {
+	align-items: center;
 }
