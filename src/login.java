@@ -1,10 +1,14 @@
-import java.io.IOException;
-import javax.servlet.ServletException;
+import javax.naming.*;
+import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import javax.servlet.http.*;
+import java.io.*;
+import java.sql.*;
+
+import javax.sql.*;
+
+
+import com.sun.xml.internal.bind.CycleRecoverable.Context;
 
 /**
  * Servlet implementation class login
@@ -12,13 +16,21 @@ import javax.servlet.http.HttpSession;
 @WebServlet("/login")
 public class login extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private DataSource fuente_datos = null;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public login() {  //Cada vez que se carga el servlet
-        super();
-        // TODO Auto-generated constructor stub
+
+    public void init(ServletConfig conf) throws ServletException
+    {
+    	super.init(conf);
+    	InitialContext ctx;
+    	try {
+    		ctx = new InitialContext();
+    		fuente_datos = (DataSource)ctx.lookup("java:comp/env/jdbc/DBAcademia");
+    		
+    	}
+    	catch (NamingException e ) {
+    		e.printStackTrace();
+    	}
     }
 
 	/**

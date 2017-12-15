@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Context>
+<Context path="/login">
     <!-- Specify a JDBC datasource for mysql -->
     <Resource name="jdbc/DBAcademia" 
               auth="Container"
@@ -7,7 +7,7 @@
               username="root" 
               password="root"
               driverClassName="com.mysql.jdbc.Driver"
-              url="jdbc:mysql://localhost:3306/DBAcademia"
+              url="jdbc:mysql://localhost:3306/dbacademia"
               maxActive="10" 
               maxIdle="4" />
 </Context>
