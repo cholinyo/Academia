@@ -38,7 +38,7 @@ public class login extends HttpServlet {
 		if (request.getParameter("login").compareTo("admin")==0 && (request.getParameter("password").compareTo("admin")==0)) {
 			HttpSession session = request.getSession();
 			session.setAttribute("login", "admin");
-			String name=request.getParameter("login");
+			session.setAttribute("rol", "admin");
 			response.sendRedirect("acceso_portal.jsp");
 			
 		}
