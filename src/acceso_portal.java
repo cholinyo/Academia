@@ -51,6 +51,7 @@ public class acceso_portal extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		out.println("<h1>Dentro</h1>");
 		out.println(session.getAttribute("login"));
+		out.println(session.getAttribute("conexion"));
 		}
 		
 	}

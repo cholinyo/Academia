@@ -47,8 +47,19 @@ public class login extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//doGet(request, response);
+		Connection conexion=null;
+		synchronized (fuente_datos) {
+			try {
+				conexion = fuente_datos.getConnection();
+			}
+			catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		
 		if (request.getParameter("login").compareTo("admin")==0 && (request.getParameter("password").compareTo("admin")==0)) {
 			HttpSession session = request.getSession();
+			session.setAttribute("conexion", "ok");
 			session.setAttribute("login", "admin");
 			session.setAttribute("rol", "admin");
 			response.sendRedirect("acceso_portal.jsp");
