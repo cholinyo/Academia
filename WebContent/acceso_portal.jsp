@@ -15,7 +15,7 @@ String nombre = (String)session.getAttribute("nombre");
 </head>
 <body>
 <header><h1>DEl JSP</h1>
-<p>El usuario de la sesion es: <%= session.getAttribute("login") %></p></header>
+<p>El usuario de la sesion es: <%= session.getAttribute("login") %> y la conexion es:<%= session.getAttribute("conexion") %> </p></header>
 </body>
 <footer></footer>
 </html>
