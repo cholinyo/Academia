@@ -51,24 +51,35 @@ public class login extends HttpServlet {
 		synchronized (fuente_datos) {
 			try {
 				conexion = fuente_datos.getConnection();
+				//Comprobación si el usuario existe en bbdd y el password coincide//
+				String usuario=request.getParameter("login");
+				String qry="SELECT * FROM usuarios WHERE login=?";
+				PreparedStatement pstmt = conexion.prepareStatement(qry);
+				pstmt.setString(1, usuario);
+				ResultSet rs = pstmt.executeQuery();
+				if(rs.next()) { //El usuario está en la base de datos
+					String pass = rs.getString(2);
+					if (request.getParameter("login").compareTo(rs.getString(2))==0 && (request.getParameter("password").compareTo(rs.getString(3))==0)) {
+						HttpSession session = request.getSession();
+						session.setAttribute("conexion", "ok");
+						session.setAttribute("login", "admin");
+						session.setAttribute("rol", "admin");
+						response.sendRedirect("acceso_portal.jsp");
+					}
+				
+				}
+				else { // El usuario no está en la base de datos
+					
+					response.sendRedirect("index.html");
+				}
+				
 			}
 			catch (SQLException e) {
 				e.printStackTrace();
 			}
 		}
 		
-		if (request.getParameter("login").compareTo("admin")==0 && (request.getParameter("password").compareTo("admin")==0)) {
-			HttpSession session = request.getSession();
-			session.setAttribute("conexion", "ok");
-			session.setAttribute("login", "admin");
-			session.setAttribute("rol", "admin");
-			response.sendRedirect("acceso_portal.jsp");
-			
-		}
-		else {
-			response.sendRedirect("index.html");
-		}			
-		
+
 	}
 
 }
