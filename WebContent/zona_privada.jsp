@@ -8,7 +8,7 @@ if (session.getAttribute("login")==null){
 }
 String nombre = (String)session.getAttribute("nombre");
 %> 
-<<head>
+<head>
 	<meta charset="UTF-8">
 	<title>Zona Privada</title>
 	<link rel="stylesheet" type="text/css" href="css/theme.css">
@@ -20,9 +20,21 @@ String nombre = (String)session.getAttribute("nombre");
 		<h1>Academia Zona Privada</h1>
 		<p>El usuario de la sesion es: <%= session.getAttribute("login") %> y la conexion es:<%= session.getAttribute("conexion") %> </p>
 </header>
+<%switch session.getAttribute("rol") {
+case "admin":
+	cabecera
+	opciones
+case "porfesor":
+	cabecera
+case "alumno":
+	cabecera
+
+
+}%>
+
+
 	<nav>
 	</nav>
-<header><h1>DEl JSP</h1>
 </body>
 <footer></footer>
 </html>

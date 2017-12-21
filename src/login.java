@@ -64,7 +64,7 @@ public class login extends HttpServlet {
 						session.setAttribute("conexion", "ok");
 						session.setAttribute("login", "admin");
 						session.setAttribute("rol", "admin");
-						response.sendRedirect("acceso_portal.jsp");
+						response.sendRedirect("zona_privada.jsp");
 					}
 				
 				}
