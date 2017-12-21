@@ -14,8 +14,14 @@ String nombre = (String)session.getAttribute("nombre");
 <title>Acceso Portal</title>
 </head>
 <body>
-<header><h1>DEl JSP</h1>
-<p>El usuario de la sesion es: <%= session.getAttribute("login") %></p></header>
+<header>
+<div class="container">
+	<div class="row">	
+		<div class="col-9"><h1>DEl JSP</h1></div>
+		<div class="col-3"><p>El usuario de la sesion es: <%= session.getAttribute("login") %></p></div>
+	</div>
+</div>
+</header>
 </body>
 <footer></footer>
 </html>
