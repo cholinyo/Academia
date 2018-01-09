@@ -1,3 +1,4 @@
+<%@page import="javafx.geometry.HPos"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
        
@@ -18,23 +19,36 @@ String nombre = (String)session.getAttribute("nombre");
 <body>
 <header>
 		<h1>Academia Zona Privada</h1>
-		<p>El usuario de la sesion es: <%= session.getAttribute("login") %> y la conexion es:<%= session.getAttribute("conexion") %> </p>
+		<p>El usuario de la sesion es: <%= session.getAttribute("nombre") %>, el rol es: <%= session.getAttribute("rol") %>  y la conexion es:<%= session.getAttribute("conexion") %> </p>
 </header>
-<%switch session.getAttribute("rol") {
-case "admin":
-	cabecera
-	opciones
-case "porfesor":
-	cabecera
-case "alumno":
-	cabecera
+<navigation>
 
-
-}%>
-
-
-	<nav>
-	</nav>
+<%
+String rol=(String)session.getAttribute("rol");
+switch  (rol)
+		{
+	case "admin": %>
+		<jsp:include page="opciones_admin.jsp"/> ;
+		<%break;
+	case "profesor":  %>
+		<jsp:include page="opciones_profesor.jsp"/>;
+		<%break;
+	case "estudiante": %>
+		<jsp:include page="opciones_estudiante.jsp"/>; 
+		<% break;
+	} %>
+</navigation>
 </body>
-<footer></footer>
+	<footer class="container">
+		<div class="links_footer col-sm-6">
+		<ul>
+			<li>Sobre Nosotros</li>
+			<li>Privacidad</li>
+			<li>Accesibilidad</li>
+			<li> legale </li>
+		</ul>
+		<div class="datos_footer col-sm-6">
+			<img >
+		</div>
+	</footer>
 </html>

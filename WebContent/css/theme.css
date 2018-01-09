@@ -1,12 +1,50 @@
 @charset "ISO-8859-1";
 
 p {
-	
-color: red;}
+}
 
-header {background-color: red;
+header {background-image: url("../images/Academia_banner.png");
+	height: 300px;
 }
 
 .form-group {
 	align-items: center;
+}
+
+.informacion {
+	
+}
+
+.noticia {
+	
+}
+
+.login {
+	
+}
+
+
+
+.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: grey;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 1px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111111;
 }

@@ -62,8 +62,10 @@ public class login extends HttpServlet {
 					if (request.getParameter("login").compareTo(rs.getString(2))==0 && (request.getParameter("password").compareTo(rs.getString(3))==0)) {
 						HttpSession session = request.getSession();
 						session.setAttribute("conexion", "ok");
-						session.setAttribute("login", "admin");
-						session.setAttribute("rol", "admin");
+						session.setAttribute("login",rs.getString(2));
+						String nombreUsuario = rs.getString(4) + " " + rs.getString(5);
+						session.setAttribute("nombre", nombreUsuario);
+						session.setAttribute("rol", rs.getString(6));
 						response.sendRedirect("zona_privada.jsp");
 					}
 				
