@@ -41,7 +41,15 @@
 										<div class="form-group">
 						<label class="col-sm-2" for="password">Rol</label>
 						<div class="col-sm-10">
-							<input type="text" name="rol" id="rol" placeholder="password">
+							    <fieldset>
+							        <legend>Elige un rol</legend>
+							        <label>
+							            <input type="radio" name="rol" value="admin">Administrador</label>
+							        <label>
+							            <input type="radio" name="rol" value="profesor">Profesor</label>
+							        <label>
+							            <input type="radio" name="rol" value="estudiante" checked="checked">Estudiante</label>
+							    </fieldset>
 						</div>
 					<button type="submit" class="btn btn-default">Enviar</button>
 				</form>

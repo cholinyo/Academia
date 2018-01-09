@@ -30,6 +30,7 @@ switch  (rol)
 		{
 	case "admin": %>
 		<jsp:include page="opciones_admin.jsp"/> ;
+		<jsp:include page="listado_usuarios.jsp"/>;
 		<%break;
 	case "profesor":  %>
 		<jsp:include page="opciones_profesor.jsp"/>;
