@@ -25,7 +25,7 @@ public class login extends HttpServlet {
     	InitialContext ctx;
     	try {
     		ctx = new InitialContext();
-    		fuente_datos = (DataSource)ctx.lookup("java:comp/env/jdbc/DBAcademia");
+    		fuente_datos = (DataSource)ctx.lookup("java:comp/env/jdbc/dbacademia");
     		
     	}
     	catch (NamingException e ) {
@@ -51,26 +51,31 @@ public class login extends HttpServlet {
 		synchronized (fuente_datos) {
 			try {
 				conexion = fuente_datos.getConnection();
-				//Comprobación si el usuario existe en bbdd y el password coincide//
+				//Comprobaciï¿½n si el usuario existe en bbdd y el password coincide//
 				String usuario=request.getParameter("login");
 				String qry="SELECT * FROM usuarios WHERE login=?";
 				PreparedStatement pstmt = conexion.prepareStatement(qry);
 				pstmt.setString(1, usuario);
 				ResultSet rs = pstmt.executeQuery();
-				if(rs.next()) { //El usuario está en la base de datos
+				if(rs.next()) { //El usuario estï¿½ en la base de datos
 					String pass = rs.getString(2);
 					if (request.getParameter("login").compareTo(rs.getString(2))==0 && (request.getParameter("password").compareTo(rs.getString(3))==0)) {
 						HttpSession session = request.getSession();
 						session.setAttribute("conexion", "ok");
+<<<<<<< HEAD
 						session.setAttribute("login",rs.getString(2));
 						String nombreUsuario = rs.getString(4) + " " + rs.getString(5);
 						session.setAttribute("nombre", nombreUsuario);
 						session.setAttribute("rol", rs.getString(6));
+=======
+						session.setAttribute("login", "admin");
+						session.setAttribute("rol", "admin");
+>>>>>>> branch 'master' of https://github.com/cholinyo/Academia.git
 						response.sendRedirect("zona_privada.jsp");
 					}
 				
 				}
-				else { // El usuario no está en la base de datos
+				else { // El usuario no estï¿½ en la base de datos
 					
 					response.sendRedirect("index.html");
 				}
