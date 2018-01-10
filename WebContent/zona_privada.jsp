@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <%@page import="javafx.geometry.HPos"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>

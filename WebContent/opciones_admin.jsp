@@ -8,7 +8,7 @@
 <div class="container">
 	<div class="col-rs 12 panel panel-default "  >
 		<div class="panel-heading">
-			<h2>Panel de Control</h2>
+			<h2>Panel de Control Admin</h2>
 		</div>
 		<div class="panel panel-body">	
 				<div class="seleccion col-rs-4 panel panel-default">

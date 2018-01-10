@@ -13,16 +13,14 @@
 </head>
 <body>
 <%
-try
-{
+
 	if(conectaBD.conecta()!=null){
 		System.out.println("conectado BBDD");
 	}
 	else {
 		System.out.println("Error conectando");
 	}
-}
-ca
+
 %>
 </body>
 </html>
