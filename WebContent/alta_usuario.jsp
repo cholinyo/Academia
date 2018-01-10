@@ -8,6 +8,7 @@
 </head>
 
 <body>
+<jsp:include page="HeadFoot/Cabecera.jsp"/> ;
 <div class="login col-sm-4">	
 				<p>Formulario para dar de alta usuario<p>
 				<form class="form-horizontal" action="graba_usuario" method="post">

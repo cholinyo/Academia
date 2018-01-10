@@ -12,27 +12,31 @@
 		</div>
 		<div class="panel panel-body">	
 				<div class="seleccion col-rs-4 panel panel-default">
-					<div class="panel-heading"><h3>Alumnos</h3></div>
+					<div class="panel-heading"><h3>Usuarios</h3></div>
 						<div class="panel-body">
-							<ul>
-								<li><a href="alta_usuario.jsp">Alta<img src=""></a></li>
-								<li><a href="">Baja<img src=""></a></li>
+							<ul class="list-inline">
+								<li><a href="alta_usuario.jsp">Alta usuario<img src=""></a></li>
+								<li><a href="">Baja usuario<img src=""></a></li>
+								<li><a href="">Consulta Alumnos<img src=""></a></li>
+								<li><a href="">Cosulta Profesores<img src=""></a></li>
 							</ul>
 						</div>
 				</div>
 				<div class="seleccion col-rs-4 panel panel-default">
-					<div class="panel-heading"><h3>Alumnos</h3></div>
+					<div class="panel-heading"><h3>Asignaturas</h3></div>
 						<div class="panel-body">
-							<ul>
+							<ul class="list-inline">
 								<li><a href="">Alta<img src=""></a></li>
 								<li><a href="">Baja<img src=""></a></li>
+								<li><a href="">Consulta<img src=""></a></li>
+								
 							</ul>
 						</div>
 				</div>
 				<div class="seleccion col-rs-4 panel panel-default">
 					<div class="panel-heading"><h3>Alumnos</h3></div>
 					<div class="panel-body">
-						<ul>
+						<ul class="list-inline">
 							<li><a href="">Alta<img src=""></a></li>
 							<li><a href="">Baja<img src=""></a></li>
 						</ul>

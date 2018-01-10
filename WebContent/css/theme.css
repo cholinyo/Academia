@@ -32,19 +32,3 @@ header {background-image: url("../images/Academia_banner.png");
     overflow: hidden;
     background-color: grey;
 }
-
-li {
-    float: left;
-}
-
-li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 1px;
-    text-decoration: none;
-}
-
-li a:hover {
-    background-color: #111111;
-}

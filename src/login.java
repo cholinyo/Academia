@@ -25,7 +25,7 @@ public class login extends HttpServlet {
     	InitialContext ctx;
     	try {
     		ctx = new InitialContext();
-    		fuente_datos = (DataSource)ctx.lookup("java:comp/env/jdbc/bdacademia");
+    		fuente_datos = (DataSource)ctx.lookup("java:comp/env/jdbc/dbacademia");
     		
     	}
     	catch (NamingException e ) {

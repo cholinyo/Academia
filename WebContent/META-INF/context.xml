@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Context path="/login">
     <!-- Specify a JDBC datasource for mysql -->
-    <Resource name="jdbc/bdacademia" 
+    <Resource name="jdbc/dbacademia" 
               auth="Container"
               type="javax.sql.DataSource" 
               username="root" 
               password="root"
               driverClassName="com.mysql.jdbc.Driver"
-              url="jdbc:mysql://localhost:3306/bdacademia"
+              url="jdbc:mysql://localhost:3306/dbacademia"
  />
 </Context>
