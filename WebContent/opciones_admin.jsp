@@ -17,8 +17,8 @@
 							<ul class="list-inline">
 								<li><a href="alta_usuario.jsp">Alta usuario<img src=""></a></li>
 								<li><a href="">Baja usuario<img src=""></a></li>
-								<li><a href="">Consulta Alumnos<img src=""></a></li>
-								<li><a href="">Cosulta Profesores<img src=""></a></li>
+								<li><a href="listado_usuarios.jsp?tipo=estudiante">Consulta Alumnos<img src=""></a></li>
+								<li><a href="listado_usuarios.jsp?tipo=profesor">"Cosulta Profesores<img src=""></a></li>
 							</ul>
 						</div>
 				</div>
