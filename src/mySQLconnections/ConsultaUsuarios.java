@@ -92,4 +92,31 @@ public class ConsultaUsuarios {
 	      }
 	      return listaUsuarios;
 	   }
+	public static Usuario getUsuario(int id)
+	   {
+		Usuario usuario = new Usuario();
+	      try
+	      {
+	    	  	Class.forName("org.gjt.mm.mysql.Driver");
+	    	  	Connection conexion = DriverManager.getConnection ("jdbc:mysql://localhost/dbacademia","root", "root");
+	        PreparedStatement ps = conexion.prepareStatement("select * from usuarios where idusuario=?");
+	        ps.setInt(1,id);
+	        ResultSet rs = ps.executeQuery(); 
+	        if (rs.next()) {
+	        usuario.setIdusuario(rs.getInt("idusuario"));
+	        usuario.setLogin(rs.getString("login"));
+	        usuario.setNombre(rs.getString("nombre"));
+	        usuario.setApellido(rs.getString("apellidos"));
+	        usuario.setRol(rs.getString("rol"));
+	         rs.close();
+	         ps.close();
+	         conexion.close();
+	        }
+	      }
+	      catch (Exception e)
+	      {
+	         e.printStackTrace();
+	      }
+	      return usuario;
+	   }
 }

@@ -31,7 +31,6 @@ String rol=(request.getParameter("tipo"));
 <th>x</th>
 </tr>
 <%
-
 LinkedList<Usuario> lista = ConsultaUsuarios.getUsuariostipo(rol);
 for (int i=0;i<lista.size();i++)
 {
