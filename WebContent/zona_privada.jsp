@@ -29,7 +29,8 @@ switch  (rol)
 		{
 	case "admin": %>
 		<jsp:include page="opciones_admin.jsp"/> ;
-		<jsp:include page="listado_usuarios.jsp"/>;
+		<h2>Últimos altas realizadas</h2>
+		<jsp:include page="WEB-INF/Usuarios/listado_ultimos_usuarios.jsp"/>;
 		<%break;
 	case "profesor":  %>
 		<jsp:include page="opciones_profesor.jsp"/>;
