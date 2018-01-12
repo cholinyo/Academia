@@ -1,3 +1,4 @@
+package usuarios;
 
 
 import java.io.IOException;
@@ -14,13 +15,13 @@ import javax.servlet.http.HttpSession;
  * Servlet implementation class acceso_portal
  */
 @WebServlet("/acceso_portal")
-public class acceso_portal extends HttpServlet {
+public class AccesoPortal extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public acceso_portal() {
+    public AccesoPortal() {
         super();
         // TODO Auto-generated constructor stub
     }

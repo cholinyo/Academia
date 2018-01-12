@@ -1,4 +1,4 @@
-package mySQLconnections;
+package usuarios;
 
 public class Usuario {
 	
@@ -42,6 +42,12 @@ public class Usuario {
 			return rol;
 		}
 		public void setRol(String rol) {
+			this.rol = rol;
+		}
+		public String getBajal() {
+			return rol;
+		}
+		public void setBaja(String rol) {
 			this.rol = rol;
 		}
 }

@@ -28,9 +28,11 @@ String rol=(String)session.getAttribute("rol");
 switch  (rol)
 		{
 	case "admin": %>
-		<jsp:include page="opciones_admin.jsp"/> ;
-		<h2>Últimos altas realizadas</h2>
-		<jsp:include page="WEB-INF/Usuarios/listado_ultimos_usuarios.jsp"/>;
+		<jsp:include page="opciones_admin.jsp"/>
+		<div class= "container">
+			<h2>Últimas altas de usuarios realizadas</h2>	
+		<jsp:include page="listado_ultimos_usuarios.jsp"/>;
+		</div>
 		<%break;
 	case "profesor":  %>
 		<jsp:include page="opciones_profesor.jsp"/>;

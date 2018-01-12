@@ -1,3 +1,4 @@
+package usuarios;
 
 
 import java.io.IOException;
@@ -22,7 +23,7 @@ import javax.sql.DataSource;
  * Servlet implementation class graba_usuario
  */
 @WebServlet("/graba_usuario")
-public class graba_usuario extends HttpServlet {
+public class GrabaUsuario extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private DataSource fuente_datos = null;
        
@@ -76,13 +77,14 @@ public class graba_usuario extends HttpServlet {
 				out.println(nombre);
 				out.println(apellidos);
 				out.println(rol); */
-				String qry="INSERT INTO usuarios (login, password, nombre, apellidos, rol) VALUES (?, ?, ?, ?, ? )"; 
+				String qry="INSERT INTO usuarios (login, password, nombre, apellidos, rol, baja) VALUES (?, ?, ?, ?, ? ,?)"; 
 				PreparedStatement pstmt = conexion.prepareStatement(qry);
 				pstmt.setString(1,usuario);
 				pstmt.setString(2,password); 
 				pstmt.setString(3,nombre);
 				pstmt.setString(4,apellidos); 
 				pstmt.setString(5,rol); 
+				pstmt.setString(6,"no"); 
 				int rs = pstmt.executeUpdate();
 				out.println(rs);
 				response.sendRedirect("zona_privada.jsp");

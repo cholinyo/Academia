@@ -15,10 +15,9 @@
 					<div class="panel-heading"><h3>Usuarios</h3></div>
 						<div class="panel-body">
 							<ul class="list-inline">
-								<li><a href="alta_usuario.jsp">Alta usuario<img src=""></a></li>
-								<li><a href="">Baja usuario<img src=""></a></li>
-								<li><a href="listado_usuarios.jsp?tipo=estudiante">Consulta Alumnos<img src=""></a></li>
-								<li><a href="listado_usuarios.jsp?tipo=profesor">Cosulta Profesores<img src=""></a></li>
+								<li><a href="alta_usuario.jsp">Altas usuarios<img src=""></a></li>
+								<li><a href="listado_usuarios.jsp?tipo=estudiante">Gestion de Alumnos<img src=""></a></li>
+								<li><a href="listado_usuarios.jsp?tipo=profesor">Gestion de Profesores<img src=""></a></li>
 							</ul>
 						</div>
 				</div>
@@ -26,21 +25,11 @@
 					<div class="panel-heading"><h3>Asignaturas</h3></div>
 						<div class="panel-body">
 							<ul class="list-inline">
-								<li><a href="">Alta<img src=""></a></li>
-								<li><a href="">Baja<img src=""></a></li>
-								<li><a href="">Consulta<img src=""></a></li>
-								
+								<li><a href="alta_asingatura.jsp">Altas Asignaturas<img src=""></a></li>
+								<li><a href="">Gestion de Asignaturas<img src=""></a></li>							
 							</ul>
 						</div>
 				</div>
-				<div class="seleccion col-rs-4 panel panel-default">
-					<div class="panel-heading"><h3>Alumnos</h3></div>
-					<div class="panel-body">
-						<ul class="list-inline">
-							<li><a href="">Alta<img src=""></a></li>
-							<li><a href="">Baja<img src=""></a></li>
-						</ul>
-					</div>
 				</div>
 		</div>
 			

@@ -1,3 +1,4 @@
+package usuarios;
 import javax.naming.*;
 import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
@@ -14,7 +15,7 @@ import com.sun.xml.internal.bind.CycleRecoverable.Context;
  * Servlet implementation class login
  */
 @WebServlet("/login")
-public class login extends HttpServlet {
+public class Login extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private DataSource fuente_datos = null;
        

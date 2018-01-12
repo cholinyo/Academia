@@ -2,7 +2,7 @@ package mySQLconnections;
 import java.sql.DriverManager;
 import com.mysql.jdbc.Connection;
 
-public class conectaBD {
+public class ConectaBD {
 	 @SuppressWarnings("finally")
 	public static Connection conecta()
 	    {

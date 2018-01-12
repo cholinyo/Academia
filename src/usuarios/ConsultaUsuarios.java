@@ -1,4 +1,4 @@
-package mySQLconnections;
+package usuarios;
 
 import java.sql.*;
 import java.util.LinkedList;
@@ -42,7 +42,7 @@ public class ConsultaUsuarios {
 	    	  	Class.forName("org.gjt.mm.mysql.Driver");
 	    	  	Connection conexion = DriverManager.getConnection ("jdbc:mysql://localhost/dbacademia","root", "root");
 	        Statement st = conexion.createStatement();
-	        ResultSet rs = st.executeQuery("select * from usuarios ORDER by idusuario desc LIMIT 8" );
+	        ResultSet rs = st.executeQuery("select * from usuarios WHERE baja='no' ORDER by idusuario desc LIMIT 8" );
 	         while (rs.next())
 	         {
 	            Usuario usuario = new Usuario();
@@ -71,7 +71,7 @@ public class ConsultaUsuarios {
 	    	  	Class.forName("org.gjt.mm.mysql.Driver");
 	    	  	Connection conexion = DriverManager.getConnection ("jdbc:mysql://localhost/dbacademia","root", "root");
 	        Statement st = conexion.createStatement();
-	        ResultSet rs = st.executeQuery("select * from usuarios where rol='" + tipo + "'");
+	        ResultSet rs = st.executeQuery("select * from usuarios where baja='no' AND rol='" + tipo + "'");
 	         while (rs.next())
 	         {
 	            Usuario usuario = new Usuario();
