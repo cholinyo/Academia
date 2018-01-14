@@ -72,7 +72,7 @@ public class GrabaUsuario extends HttpServlet {
 				String apellidos=request.getParameter("apellidos");
 				String rol=request.getParameter("rol");
 				PrintWriter out=response.getWriter();
-				/*				out.println(usuario);
+				/*out.println(usuario);
 				out.println(password);
 				out.println(nombre);
 				out.println(apellidos);
