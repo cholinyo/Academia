@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Modificación de Asignaturas</title>
 </head>
 <body>
 	<jsp:include page="Vista/cabecera.jsp" />
@@ -17,27 +17,20 @@
 		int id = Integer.parseInt(request.getParameter("id"));
 		out.println(id);
 		Asignatura asignatura = Asignatura.getAsignatura(id);
+		out.println(asignatura.getEstado());
 		int idprofesorasignado = asignatura.getProfesor();
 		Usuario profesor = ConsultaUsuarios.getUsuario(idprofesorasignado);
-		out.println(asignatura.getNombre());
-		out.println(asignatura.getProfesor());
-		out.println(asignatura.getHorario());
-		out.println(asignatura.getEstado());
-		out.println(profesor.getNombre());
-		out.println(profesor.getApellido());
-		out.println(asignatura.getProfesor() + " " + profesor.getNombre() + " " + profesor.getApellido());
 		LinkedList<Usuario> listaProfesores = ConsultaUsuarios.getUsuariostipo("profesor");
 	%>
 	<div class="container">
 		<div>
 			<p>Alta asignatura
 			<p>
-			<form class="form-horizontal" action="GrabaAsignatura" method="post">
+			<form class="form-horizontal" action="ModificaAsignatura" method="post">
 				<div class="form-group">
 					<label class="col-sm-2" for="nombre">Código Asignatura</label>
 					<div class="col-sm-10">
-						<input type="text" name="nombre" id="nombre"
-							value="<%=asignatura.getIdasignatura()%>" disabled="disabled">
+						<input type="text" name="idasignatura" id="idasignatura"  readonly="readonly" value="<%=id%>">
 					</div>
 				</div>
 				<div class="form-group">
@@ -76,7 +69,25 @@
 						</select>
 					</div>
 				</div>
-				<button type="submit" class="btn btn-default">Modificar Asignatura</button>
+				<div class="form-group">
+					<label class="col-sm-2" for="profesor">Activa/Desactiva Asignatura</label>
+					<div class="col-sm-10">
+						<%if (asignatura.getEstado() == "baja") {%>
+							<label><input type="radio" name="estado" value="alta"> Alta</label><br>
+							<label><input type="radio" name="estado" value="baja" checked="checked"> Baja</label><br>
+							<%
+							}
+						else 
+							{
+							%>
+							<label><input type="radio" name="estado" value="alta" checked="checked"> Alta</label><br>
+							<label><input type="radio" name="estado" value="baja"> Baja</label><br>
+							<%
+							}
+							%>
+					</div>
+				</div>
+			<button type="submit" class="btn btn-default">Modificar Asignatura</button>
 			</form>
 		</div>
 	</div>

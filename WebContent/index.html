@@ -1,72 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Bienvenida Academia</title>
-	<link rel="stylesheet" type="text/css" href="css/theme.css">
-	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+<meta charset="UTF-8">
+<title>Bienvenida Academia</title>
+<link rel="stylesheet" type="text/css" href="css/theme.css">
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
 </head>
 <body>
 	<header class="container">
 		<h1>Academia</h1>
 	</header>
-	<nav class="container" >	
-	<ul class="list-inline">
-	<li>Quienes Somos</li>
-	<li>Donde estamos</li>
-	<li>Blog</li>
-	</ul>
+	<nav class="container">
+		<ul class="list-inline">
+			<li>Quienes Somos</li>
+			<li>Donde estamos</li>
+			<li>Blog</li>
+			<li>Salir</li>
+
+		</ul>
 	</nav>
 	<div>
-	<div class="container">
-		<div class="row" >
-			<div class="informacion col-sm-8">
-				<div class="noticia">
+		<div class="container">
+			<div class="row">
+				<div class="informacion col-sm-8">
+					<div class="noticia">
+						<img>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+							Nunc non eleifend quam. Sed vitae fringilla orci. Fusce eu neque
+							convallis, ornare lectus a, lobortis massa. Vestibulum at
+							consectetur sem. Cras iaculis diam ex, non dignissim nunc
+							ultricies at. Vestibulum ac condimentum turpis. In dignissim, sem
+							ac auctor vehicula, sem neque aliquet nisl, non sagittis dui
+							purus a nunc. Ut id nunc orci. Quisque in consequat tortor.
+							Suspendisse potenti. Fusce congue at nibh ac lacinia. Cras vel
+							dui efficitur, lobortis turpis nec, luctus est</p>
+					</div>
+					<div class="noticia">
+						<img />
+						<p>Aenean tellus purus, lacinia quis erat et, porta aliquet
+							urna. Morbi in diam sit amet quam fringilla viverra sit amet
+							vitae dui. Nam nec turpis tincidunt, luctus ante sed, tempor
+							tortor. Nulla eros felis, sagittis sit amet quam ac, pellentesque
+							iaculis magna. Suspendisse cursus et diam nec tempor.
+							Pellentesque nulla justo, congue ac eleifend sit amet, imperdiet
+							eget nisl. Nam eros lorem, consectetur nec sollicitudin at,
+							consectetur at tortor. Donec fermentum non justo ac tristique.
+							Suspendisse potenti. Ut quis vulputate lorem, in gravida est.
+							Nunc auctor tempus tortor, vel mollis felis auctor ac.
+							Pellentesque habitant morbi tristique senectus et netus et
+							malesuada fames ac turpis egestas. Proin vestibulum sed mi et
+							maximus. Quisque id quam tempor, luctus quam sagittis, vestibulum
+							magna. Nullam suscipit elit eget justo maximus maximus. Integer
+							eget dolor eu mi bibendum venenatis.</p>
+					</div>
+					<div class="noticia">
+						<img />
+						<p>Aenean tellus purus, lacinia quis erat et, porta aliquet
+							urna. Morbi in diam sit amet quam fringilla viverra sit amet
+							vitae dui. Nam nec turpis tincidunt, luctus ante sed, tempor
+							tortor. Nulla eros felis, sagittis sit amet quam ac, pellentesque
+							iaculis magna. Suspendisse cursus et diam nec tempor.
+							Pellentesque nulla justo, congue ac eleifend sit amet, imperdiet
+							eget nisl. Nam eros lorem, consectetur nec sollicitudin at,
+							consectetur at tortor. Donec fermentum non justo ac tristique.
+							Suspendisse potenti. Ut quis vulputate lorem, in gravida est.
+							Nunc auctor tempus tortor, vel mollis felis auctor ac.
+							Pellentesque habitant morbi tristique senectus et netus et
+							malesuada fames ac turpis egestas. Proin vestibulum sed mi et
+							maximus. Quisque id quam tempor, luctus quam sagittis, vestibulum
+							magna. Nullam suscipit elit eget justo maximus maximus. Integer
+							eget dolor eu mi bibendum venenatis.</p>
+					</div>
+				</div>
+				<div class="login col-sm-4">
+					<p>Bienvenido a la Academia, introduce tus datos para acceder
+					<p>
+					<form class="form-horizontal" action="login" method="post">
+						<div class="form-group">
+							<label class="col-sm-2 control-label" for="login">Usuario</label>
+							<div class="col-sm-10">
+								<input class="col-sm-9" type="text" name="login" id="login"
+									placeholder="usuario">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2" for="password">Contraseña</label>
+							<div class="col-sm-10">
+								<input type="password" name="password" id="password"
+									placeholder="password">
+							</div>
+						</div>
+						<button type="submit" class="btn btn-default">Enviar</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		<footer class="container">
+			<div class="links_footer col-sm-6">
+				<ul class="list-inline">
+					<li>Sobre Nosotros</li>
+					<li>Privacidad</li>
+					<li>Accesibilidad</li>
+					<li>Aviso Legal</li>
+				</ul>
+				<div class="datos_footer col-sm-6">
 					<img>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc non eleifend quam. Sed vitae fringilla orci. Fusce eu neque convallis, ornare lectus a, lobortis massa. Vestibulum at consectetur sem. Cras iaculis diam ex, non dignissim nunc ultricies at. Vestibulum ac condimentum turpis. In dignissim, sem ac auctor vehicula, sem neque aliquet nisl, non sagittis dui purus a nunc. Ut id nunc orci. Quisque in consequat tortor. Suspendisse potenti. Fusce congue at nibh ac lacinia. Cras vel dui efficitur, lobortis turpis nec, luctus est</p>
 				</div>
-				<div class="noticia">
-					<img/>
-					<p>Aenean tellus purus, lacinia quis erat et, porta aliquet urna. Morbi in diam sit amet quam fringilla viverra sit amet vitae dui. Nam nec turpis tincidunt, luctus ante sed, tempor tortor. Nulla eros felis, sagittis sit amet quam ac, pellentesque iaculis magna. Suspendisse cursus et diam nec tempor. Pellentesque nulla justo, congue ac eleifend sit amet, imperdiet eget nisl. Nam eros lorem, consectetur nec sollicitudin at, consectetur at tortor. Donec fermentum non justo ac tristique. Suspendisse potenti. Ut quis vulputate lorem, in gravida est. Nunc auctor tempus tortor, vel mollis felis auctor ac. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin vestibulum sed mi et maximus. Quisque id quam tempor, luctus quam sagittis, vestibulum magna. Nullam suscipit elit eget justo maximus maximus. Integer eget dolor eu mi bibendum venenatis. </p>
-				</div>
-				<div class="noticia">
-					<img/>
-					<p>Aenean tellus purus, lacinia quis erat et, porta aliquet urna. Morbi in diam sit amet quam fringilla viverra sit amet vitae dui. Nam nec turpis tincidunt, luctus ante sed, tempor tortor. Nulla eros felis, sagittis sit amet quam ac, pellentesque iaculis magna. Suspendisse cursus et diam nec tempor. Pellentesque nulla justo, congue ac eleifend sit amet, imperdiet eget nisl. Nam eros lorem, consectetur nec sollicitudin at, consectetur at tortor. Donec fermentum non justo ac tristique. Suspendisse potenti. Ut quis vulputate lorem, in gravida est. Nunc auctor tempus tortor, vel mollis felis auctor ac. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin vestibulum sed mi et maximus. Quisque id quam tempor, luctus quam sagittis, vestibulum magna. Nullam suscipit elit eget justo maximus maximus. Integer eget dolor eu mi bibendum venenatis. </p>
-				</div>		
 			</div>
-			<div class="login col-sm-4">	
-				<p>Bienvenido a la Academia, introduce tus datos para acceder<p>
-				<form class="form-horizontal" action="login" method="post">
-					<div class="form-group">
-						<label class="col-sm-2 control-label" for="login">Usuario</label>
-						<div class="col-sm-10">
-							<input class="col-sm-9" type="text" name="login" id="login" placeholder="usuario">
-						</div>
-					</div>
-					<div class="form-group">
-						<label class="col-sm-2" for="password">Contraseña</label>
-						<div class="col-sm-10">
-							<input type="password" name="password" id="password" placeholder="password">
-						</div>
-					</div>
-					<button type="submit" class="btn btn-default">Enviar</button>
-				</form>
-			</div>
-		</div>
-	</div>	
-	<footer class="container">
-		<div class="links_footer col-sm-6">
-		<ul class="list-inline">
-			<li>Sobre Nosotros</li>
-			<li>Privacidad</li>
-			<li>Accesibilidad</li>
-			<li> legale </li>
-		</ul class="list-inline">
-		<div class="datos_footer col-sm-6">
-			<img >
-		</div>
-		</div>
-	</footer>
+		</footer>
 </body>
 </html>
