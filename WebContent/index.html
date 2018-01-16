@@ -2,22 +2,30 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Bienvenida Academia</title>
+<title>Academia</title>
 <link rel="stylesheet" type="text/css" href="css/theme.css">
 <!-- Bootstrap CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+	integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+	crossorigin="anonymous">
 </head>
 <body>
 	<header class="container">
 		<h1>Academia</h1>
 	</header>
-	<nav class="container">
-		<ul class="list-inline">
-			<li>Quienes Somos</li>
-			<li>Donde estamos</li>
-			<li>Blog</li>
-			<li>Salir</li>
+	<nav class="container navbar navbar-default">
 
+		<div class="navbar-header">
+			<a class="navbar-brand" href="http://localhost:8080/Academia/">Academia</a>
+		</div>
+		<ul class="nav navbar-nav">
+			<li class="active"><a href="http://localhost:8080/Academia/">Home</a></li>
+			<li><a href="http://localhost:8080/Academia/quien.html">Quienes
+					Somos</a></li>
+			<li><a href="http://localhost:8080/Academia/donde.html">Donde
+					estamos</a></li>
+			<li><a href="http://localhost:8080/Academia/blog.html">Blog</a></li>
 		</ul>
 	</nav>
 	<div>
@@ -76,22 +84,27 @@
 				<div class="login col-sm-4">
 					<p>Bienvenido a la Academia, introduce tus datos para acceder
 					<p>
-					<form class="form-horizontal" action="login" method="post">
+					<form class="form-horizontal" role="form" action="login"
+						method="post">
 						<div class="form-group">
-							<label class="col-sm-2 control-label" for="login">Usuario</label>
-							<div class="col-sm-10">
-								<input class="col-sm-9" type="text" name="login" id="login"
-									placeholder="usuario">
+							<label for="ejemplo_email_3" class="col-lg-3 control-label">Usuario</label>
+							<div class="col-lg-9">
+								<input type="text" class="form-control" name="login" id="login"
+									placeholder="Usuario">
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-sm-2" for="password">Contraseña</label>
-							<div class="col-sm-10">
-								<input type="password" name="password" id="password"
-									placeholder="password">
+							<label for="ejemplo_password_3" class="col-lg-3 control-label">Contraseña</label>
+							<div class="col-lg-9">
+								<input type="password" class="form-control" name="password"
+									id="password" placeholder="Contraseña">
 							</div>
 						</div>
-						<button type="submit" class="btn btn-default">Enviar</button>
+						<div class="form-group">
+							<div class="col-lg-offset-2 col-lg-10">
+								<button type="submit" class="btn btn-default">Entrar</button>
+							</div>
+						</div>
 					</form>
 				</div>
 			</div>

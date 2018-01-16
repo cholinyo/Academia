@@ -71,12 +71,6 @@ public class GrabaUsuario extends HttpServlet {
 				String nombre=request.getParameter("nombre");
 				String apellidos=request.getParameter("apellidos");
 				String rol=request.getParameter("rol");
-				PrintWriter out=response.getWriter();
-				/*out.println(usuario);
-				out.println(password);
-				out.println(nombre);
-				out.println(apellidos);
-				out.println(rol); */
 				String qry="INSERT INTO usuarios (login, password, nombre, apellidos, rol, baja) VALUES (?, ?, ?, ?, ? ,?)"; 
 				PreparedStatement pstmt = conexion.prepareStatement(qry);
 				pstmt.setString(1,usuario);
@@ -86,32 +80,7 @@ public class GrabaUsuario extends HttpServlet {
 				pstmt.setString(5,rol); 
 				pstmt.setString(6,"no"); 
 				int rs = pstmt.executeUpdate();
-				out.println(rs);
 				response.sendRedirect("zona_privada.jsp");
-				//Falta comprobar que el usuario no existe ya en la base de datos
-				//Seria interesante que esto lo hiciera una clase
-				//Comprueba_Usuario
-				//Graba_usuario
-				
-				
-/*				if(rs.next()) { //El usuario est� en la base de datos
-					String pass = rs.getString(2);
-					if (request.getParameter("login").compareTo(rs.getString(2))==0 && (request.getParameter("password").compareTo(rs.getString(3))==0)) {
-						HttpSession session = request.getSession();
-						session.setAttribute("conexion", "ok");
-						session.setAttribute("login",rs.getString(2));
-						String nombreUsuario = rs.getString(4) + " " + rs.getString(5);
-						session.setAttribute("nombre", nombreUsuario);
-						session.setAttribute("rol", rs.getString(6));
-						response.sendRedirect("zona_privada.jsp");
-					}
-				
-				}
-				else { 
-					
-					response.sendRedirect("index.html");
-				} */
-				
 			}
 			catch (SQLException e) {
 				e.printStackTrace();

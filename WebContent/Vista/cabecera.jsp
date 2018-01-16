@@ -1,30 +1,18 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-	<meta charset="UTF-8">
-	<title>Academia</title>
-	<link rel="stylesheet" type="text/css" href="css/theme.css">
-	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-</head>
-<body>
-<body>
-	<header class="container">
-		<h1>Academia</h1>
-	</header>
-	<nav class="container" >	
-	<ul class="list-inline">
-	<li>Quienes Somos</li>
-	<li>Donde estamos</li>
-	<li>Blog</li>
-	<li>Hola: <%= session.getAttribute("login") %></li>
-	<li>Salir</li>
-	
+<header class="container">
+	<h1>Academia</h1>
+</header>
+<nav class="container navbar navbar-default">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="http://localhost:8080/Academia/">Academia</a>
+	</div>
+	<ul class="nav navbar-nav">
+		<li class="active"><a href="http://localhost:8080/Academia/">Home</a></li>
+		<li><a href="http://localhost:8080/Academia/quien.html">Quienes
+				Somos</a></li>
+		<li><a href="http://localhost:8080/Academia/donde.html">Donde
+				estamos</a></li>
+		<li><a href="http://localhost:8080/Academia/blog.html">Blog</a></li>
+		<li><a href="#">Hola <%= session.getAttribute("login") %></a></li>
+		<li><a href="#">Salir</a></li>
 	</ul>
-	</nav>
-</body>
-
-</body>
-</html>
+</nav>

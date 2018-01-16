@@ -14,28 +14,18 @@ String nombre = (String)session.getAttribute("nombre");
 <title>Zona Privada</title>
 <link rel="stylesheet" type="text/css" href="css/theme.css">
 <!-- Bootstrap CSS -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
 	integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
 	crossorigin="anonymous">
 </head>
 <body>
-	<header>
-		<h1>Academia Zona Privada</h1>
-		<p>
-			El usuario de la sesion es:
-			<%= session.getAttribute("nombre") %>, el rol es:
-			<%= session.getAttribute("rol") %>
-			y la conexion es:<%= session.getAttribute("conexion") %>
-		</p>
-	</header>
-	<navigation> <%
+<jsp:include page="Vista/cabecera.jsp" />
+ <%
 String rol=(String)session.getAttribute("rol");
 switch  (rol)
 		{
 	case "admin": %> <jsp:include page="opciones_admin.jsp" />
 	<div class="container">
-		<h2>Últimas altas de usuarios realizadas</h2>
 		<jsp:include page="listado_ultimos_usuarios.jsp" />;
 	</div>
 	<%break;

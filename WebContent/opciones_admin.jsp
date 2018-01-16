@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<head>
-<!-- Bootstrap CSS -->
+<!-- <head>
+ Bootstrap CSS
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
 </head>
-<body>
+<body>  -->
 	<div class="container">
 		<div class="col-rs 12 panel panel-default ">
 			<div class="panel-heading">
@@ -47,5 +47,5 @@
 
 	</div>
 	</div>
-
-</body>
+<!--
+</body> -->

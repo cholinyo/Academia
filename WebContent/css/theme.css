@@ -1,6 +1,10 @@
 @charset "ISO-8859-1";
 
-p {
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+
+
+body {
+  font-family:Monaco,Georgia,Times,serif;
 }
 
 header {background-image: url("../images/Academia_banner.png");
@@ -23,6 +27,11 @@ header {background-image: url("../images/Academia_banner.png");
 	
 }
 
+
+panel-body{
+	
+	font-size: 1.2em;
+}
 
 
 .menu {

@@ -9,23 +9,20 @@ import java.sql.SQLException;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.servlet.ServletConfig;
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
-import javax.servlet.RequestDispatcher;
 
 /**
- * Servlet implementation class MatriculaAlumno
+ * Servlet implementation class DesmatriculaAlumno
  */
-@WebServlet("/MatriculaAlumno")
-public class MatriculaAlumno extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+@WebServlet("/DesmatriculaAlumno")
+public class DesmatriculaAlumno extends HttpServlet {
 	private DataSource fuente_datos = null;
-       
+    
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -72,7 +69,7 @@ public class MatriculaAlumno extends HttpServlet {
 				System.out.println(request.getParameter("idasignatura"));
 				System.out.println(request.getParameter("idusuario"));
 				//*System.out.println(request.getParameter("activo"));
-				String qry="INSERT INTO matriculas (idusuario, idasignatura) VALUES (?, ?)"; 
+				String qry="DELETE FROM matriculas WHERE (idusuario=? and idasignatura=?)"; 
 				PreparedStatement pstmt = conexion.prepareStatement(qry);
 				pstmt.setString(1,idusuario); 
 				pstmt.setString(2,idasignatura);
@@ -80,10 +77,6 @@ public class MatriculaAlumno extends HttpServlet {
 				int rs = pstmt.executeUpdate();
 				/*out.println(rs);*/
 				response.sendRedirect("gestionasignaturas.jsp");
-				
-	//		request.setAttribute("id", request.getParameter("idasignatura"));
-	//			RequestDispatcher rd = request.getRequestDispatcher("/asignaralumnos.jsp");
-	//			rd.forward(request, response);
 			}
 			catch (SQLException e) {
 				e.printStackTrace();
