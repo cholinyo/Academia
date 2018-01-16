@@ -38,11 +38,17 @@
 				for (int i = 0; i < lista.size(); i++) {
 					out.println("<tr>");
 					out.println("<td>" + lista.get(i).getIdusuario() + "</td>");
-					int id = lista.get(i).getIdusuario();
+					int idusuario = lista.get(i).getIdusuario();
 					out.println("<td>" + lista.get(i).getLogin() + "</td>");
 					out.println("<td>" + lista.get(i).getNombre() + "</td>");
 					out.println("<td>" + lista.get(i).getApellido() + "</td>");
-					out.println("<td>Asignar<td>");
+			//*		if (lista.get(i).getIdusuario() in Matriculas) {
+					%><td><form action='MatriculaAlumno' method='post'>
+				   <input type="hidden" name="idusuario" value="<%=idusuario%>">
+				    <input type="hidden" name="idasignatura" value="<%=idasignatura%>">
+				    <input type='submit' name='button' value='Matricula'></form><td>
+					<% 	
+					//*if (lista.get(i).getIdusuario() in Matriculas) {
 					out.println("</tr>");
 				}
 			}
