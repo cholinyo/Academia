@@ -67,6 +67,7 @@ public class Login extends HttpServlet {
 						String nombreUsuario = rs.getString(4) + " " + rs.getString(5);
 						session.setAttribute("nombre", nombreUsuario);
 						session.setAttribute("rol", rs.getString(6));
+						session.setAttribute("id_sesion", rs.getString(1));
 						response.sendRedirect("zona_privada.jsp");
 					}
 				

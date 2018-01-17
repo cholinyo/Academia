@@ -57,7 +57,7 @@
 
 							case "baja":
 								out.println("<td>Asignatura de baja</td>");
-								out.println("<td>Activela</td>");
+								out.println("<td><a href='modificarasignatura.jsp?id="+lista.get(i).getIdasignatura()+"'>Activela</a></td>");
 								break;
 							}
 							out.println("<td>" + lista.get(i).getEstado() + "</td>");

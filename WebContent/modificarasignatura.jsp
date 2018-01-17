@@ -84,18 +84,21 @@
 								Asignatura</label>
 							<div class="col-sm-10">
 								<%
-									if (asignatura.getEstado() == "baja") {
+								switch  (asignatura.getEstado()) {
+								case "baja":
 								%>
 								<label><input type="radio" name="estado" value="alta">
 									Alta</label><br> <label><input type="radio" name="estado"
 									value="baja" checked="checked"> Baja</label><br>
 								<%
-									} else {
+								break;
+								case "alta":
 								%>
 								<label><input type="radio" name="estado" value="alta"
 									checked="checked"> Alta</label><br> <label><input
 									type="radio" name="estado" value="baja"> Baja</label><br>
 								<%
+								break;
 									}
 								%>
 							</div>

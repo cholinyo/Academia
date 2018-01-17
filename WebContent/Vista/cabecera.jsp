@@ -13,6 +13,6 @@
 				estamos</a></li>
 		<li><a href="http://localhost:8080/Academia/blog.html">Blog</a></li>
 		<li><a href="#">Hola <%= session.getAttribute("login") %></a></li>
-		<li><a href="#">Salir</a></li>
+		<li><a href="Logout">Logout</a></li>
 	</ul>
 </nav>

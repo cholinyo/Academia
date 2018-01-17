@@ -6,7 +6,7 @@
 <%@ page import="java.util.LinkedList"%>
 <%@ page import="usuarios.Usuario"%>
 <%@ page import="usuarios.ConsultaUsuarios"%>
-
+<div class="container">
 <div class="col-rs 12 panel panel-default ">
 			<div class="panel-heading">
 		<h2>Últimas altas de usuarios realizadas</h2>
@@ -38,3 +38,5 @@
 		%>
 	</table>
 </div>
+</div>
+
