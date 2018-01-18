@@ -3,7 +3,7 @@
 <div class="container">
 	<div class="col-rs 12 panel panel-default ">
 		<div class="panel-heading">
-			<h2>Panel de Control Profesor</h2>
+			<h2>Panel de Control Estudianter</h2>
 		</div>
 		<div class="panel panel-body">
 			<div class="seleccion col-rs-4 panel panel-default">
@@ -12,20 +12,8 @@
 				</div>
 				<div class="panel-body">
 					<ul class="list-inline">
-						<li><a href="listado_asignaturas_profesor.jsp">Ver mis asignaturas<img
+						<li><a href="listado_asignaturas_alumno.jsp">Ver mis asignaturas<img
 								src=""></a></li>
-						<li><a href="alta_tutoria.jsp">Solicitar tutorias<img
-								src="">
-					</ul>
-				</div>
-			</div>
-			<div class="seleccion col-rs-4 panel panel-default">
-				<div class="panel-heading">
-					<h3>Peticiones</h3>
-				</div>
-				<div class="panel-body">
-					<ul class="list-inline">
-						<li>Tabla con todas las peticiones de tutorias realizadas</li>
 					</ul>
 				</div>
 			</div>

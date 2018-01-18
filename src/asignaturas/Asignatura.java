@@ -110,7 +110,7 @@ public class Asignatura {
 		return listaAsignaturas;
 	}
 	
-	public static Asignatura getAsignatura(int id) {
+	public static Asignatura getAsignatura(int id) {  //Datos de una asignatura
 		Asignatura asignatura = new Asignatura();
 		try {
 			

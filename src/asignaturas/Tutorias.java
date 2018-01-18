@@ -89,5 +89,28 @@ public class Tutorias {
 		}
 		return listatutorias; // lista con todas las asignaturas en las que un usuario está matriculado
 	}
+	
+	public static Tutorias getTutoria(int idtutoria) { // Devuelve los datos de una tutoria
+		Tutorias tutoria = new Tutorias();
+		try {
+
+			Class.forName("org.gjt.mm.mysql.Driver");
+			Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost/dbacademia", "root", "root");
+			PreparedStatement ps = conexion.prepareStatement("select * from tutorias where idtutorias=?");
+			ps.setInt(1, idtutoria);
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				tutoria.setIdtutoria(rs.getInt("idtutorias"));
+				tutoria.setIdprofesor(rs.getInt("idprofesor"));
+				tutoria.setDia(rs.getString("dia"));
+				tutoria.setHora(rs.getString("hora")) ;				
+			}
+			rs.close();
+			conexion.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return tutoria; // lista con todas las asignaturas en las que un usuario está matriculado
+	}
 
 }

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<div class="container">
+	<div class="container">
 	<div class="col-rs 12 panel panel-default ">
 		<div class="panel-heading">
 			<h2>Panel de Control Profesor</h2>
@@ -23,16 +23,11 @@
 				</div>
 			</div>
 			<div class="seleccion col-rs-4 panel panel-default">
-				<div class="panel-heading">
-					<h3>Peticiones</h3>
-				</div>
-				<div class="panel-body">
-					<ul class="list-inline">
-						<li>Tabla con todas las peticiones de tutorias</li>
-					</ul>
+
+
+							<jsp:include page="gestion_peticiones_tutoria.jsp" />
 				</div>
 			</div>
 		</div>
 	</div>
-</div>
 </body>

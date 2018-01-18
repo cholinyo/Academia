@@ -31,16 +31,14 @@
 		break;
 		case "profesor":
 	%>
-	<jsp:include page="opciones_profesor.jsp" />;
- <%-- <jsp:include page="listado_asignaturas_profesor.jsp" /> --%>
+	<jsp:include page="opciones_profesor.jsp" />; 
 	<%
 		
 		break;
 		case "estudiante":
 	%>
-	<jsp:include page="opciones_estudiante.jsp" />;
-<!--	 <jsp:include page="listado_asignaturas_estudiante.jsp" /> -->
-	
+	<jsp:include page="opciones_estudiante.jsp" />
+	 <jsp:include page="listado_peticiones_tutoria.jsp" />
 	<%
 		break;
 		}

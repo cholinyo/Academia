@@ -54,7 +54,7 @@ public class Matricula {
 			Class.forName("org.gjt.mm.mysql.Driver");
 			Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost/dbacademia", "root", "root");
 			Statement st = conexion.createStatement();
-			PreparedStatement ps = conexion.prepareStatement("select * from matriculas where idsuario=?");
+			PreparedStatement ps = conexion.prepareStatement("select * from matriculas where idusuario=?");
 			ps.setInt(1, idusuario);
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
