@@ -12,14 +12,13 @@
 				</div>
 				<div class="panel-body">
 					<ul class="list-inline">
-						<li><a href="alta_usuario.jsp">Ver mis asignaturas<img
+						<li><a href="listado_asignaturas_profesor.jsp">Ver mis asignaturas<img
 								src=""></a></li>
-						<li><a href="listado_usuarios.jsp?tipo=estudiante">Ver
-								alumnos matriculados<img src="">
-						</a>
-						<li><a href="listado_usuarios.jsp?tipo=estudiante">Tutorias<img
+						<li><a href="alta_tutoria.jsp">Crear Tutorias<img
 								src="">
 						</a></li>
+						<li><a href="gestionartutorias.jsp?idprofesor=<%=session.getAttribute("id_usuario")%>">Gesionar Tutorias<img
+								src=""></a></li>
 					</ul>
 				</div>
 			</div>

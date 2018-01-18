@@ -32,7 +32,7 @@
 		case "profesor":
 	%>
 	<jsp:include page="opciones_profesor.jsp" />;
-<!--	 	<jsp:include page="listado_asignaturas_profesor.jsp" /> -->
+ <%-- <jsp:include page="listado_asignaturas_profesor.jsp" /> --%>
 	<%
 		
 		break;

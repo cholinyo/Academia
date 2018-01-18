@@ -9,42 +9,41 @@ import java.sql.SQLException;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.servlet.ServletConfig;
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
-import javax.servlet.RequestDispatcher;
+
+import org.apache.catalina.Session;
+
+import com.sun.javafx.binding.SetExpressionHelper;
 
 /**
- * Servlet implementation class MatriculaAlumno
+ * Servlet implementation class AltaTutoria
  */
-@WebServlet("/MatriculaAlumno")
-public class MatriculaAlumno extends HttpServlet {
+@WebServlet("/AltaTutoria")
+public class AltaTutoria extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private DataSource fuente_datos = null;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-	public void init(ServletConfig conf) throws ServletException
-    {
-    	super.init(conf);
-    	InitialContext ctx;
+    public void init(ServletConfig conf) throws ServletException {
+		super.init(conf);
+		InitialContext ctx;
+		try {
+			ctx = new InitialContext();
+			fuente_datos = (DataSource) ctx.lookup("java:comp/env/jdbc/dbacademia");
 
-    	try {
-    		ctx = new InitialContext();
-    		fuente_datos = (DataSource)ctx.lookup("java:comp/env/jdbc/dbacademia");
-    		
-    	}
-    	catch (NamingException e ) {
-    		e.printStackTrace();
-    	}
-    
-    // TODO Auto-generated constructor stub
-}
+		} catch (NamingException e) {
+			e.printStackTrace();
+		}
+
+		// TODO Auto-generated constructor stub
+	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -59,34 +58,33 @@ public class MatriculaAlumno extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		// TODO Auto-generated method stub
+		// doGet(request, response);
 		response.setContentType("text/plain");
-		Connection conexion=null;
-		String idasignatura=request.getParameter("idasignatura");
+		Connection conexion = null;
 		synchronized (fuente_datos) {
 			try {
 				Console console = System.console();
 				conexion = fuente_datos.getConnection();
-				String idusuario=request.getParameter("idusuario");
-				String activo="si";
-				/*PrintWriter out=response.getWriter();*/
-				System.out.println(request.getParameter("idasignatura"));
-				System.out.println(request.getParameter("idusuario"));
-				//*System.out.println(request.getParameter("activo"));
-				String qry="INSERT INTO matriculas (idusuario, idasignatura) VALUES (?, ?)"; 
+				int idprofesor = Integer.parseInt(request.getParameter("idprofesor"));
+				String dia = request.getParameter("dia");
+				int hora = Integer.parseInt(request.getParameter("hora"));
+				/* PrintWriter out=response.getWriter(); */
+				System.out.println(request.getParameter("idprofesor"));
+				System.out.println(request.getParameter("dia"));
+				System.out.println(request.getParameter("hora"));
+				// Falta comprobar que la tutoria ya existe ya en la base de datos
+				String qry = "INSERT INTO tutorias (idprofesor, dia, hora) VALUES (?, ?, ?)";
 				PreparedStatement pstmt = conexion.prepareStatement(qry);
-				pstmt.setString(1,idusuario); 
-				pstmt.setString(2,idasignatura);
-				//*pstmt.setString(3, activo);
+				pstmt.setInt(1, idprofesor);
+				pstmt.setString(2, dia);
+				pstmt.setInt(3, hora);
 				int rs = pstmt.executeUpdate();
-				/*out.println(rs);*/
-				String url = ("id="+idasignatura);
-				response.sendRedirect("asignaralumnos.jsp?"+url);
-			
-			}
-			catch (SQLException e) {
+				response.sendRedirect("zona_privada.jsp");
+			} catch (SQLException e) {
 				e.printStackTrace();
-		}
-			
+			}
 		}
 	}
+
 }

@@ -36,6 +36,7 @@
 						<th>Estado</th>
 					</tr>
 					<%
+					
 						LinkedList<Asignatura> lista = Asignatura.getAsignaturas();
 						for (int i = 0; i < lista.size(); i++) {
 							out.println("<tr>");

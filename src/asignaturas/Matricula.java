@@ -77,6 +77,37 @@ public class Matricula {
 		return listaasignusuario; // lista con todas las asignaturas en las que un usuario está matriculado
 	}
 
+	public static LinkedList<Matricula> getUsuMatAsig(int idasignatura) { // Devuelve los usuarios matriculadas en una asignatura
+
+		LinkedList<Matricula> listaasignusuario = new LinkedList<Matricula>();
+
+		try {
+			Class.forName("org.gjt.mm.mysql.Driver");
+			Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost/dbacademia", "root", "root");
+			Statement st = conexion.createStatement();
+			PreparedStatement ps = conexion.prepareStatement("select * from matriculas where idasignatura=?");
+			ps.setInt(1, idasignatura);
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+
+				Matricula matricula = new Matricula();
+
+				matricula.setIdmatricula(rs.getInt("idmatricula"));
+				matricula.setIdusuario(rs.getInt("idusuario"));
+				matricula.setIdasignarura(rs.getInt("idasignatura"));
+				matricula.setActivo(rs.getString("activo"));
+
+				listaasignusuario.add(matricula);
+			}
+			rs.close();
+			st.close();
+			conexion.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return listaasignusuario; // lista de todas las matriculas para una asignatura
+	}
+
 	public static LinkedList<Matricula> getUserInAsigM(int idasignatura) { // Devuelve las asignaturar matriculadas por
 																			// un usuario
 
@@ -116,7 +147,8 @@ public class Matricula {
 			Class.forName("org.gjt.mm.mysql.Driver");
 			Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost/dbacademia", "root", "root");
 			Statement st = conexion.createStatement();
-			PreparedStatement ps = conexion.prepareStatement("select * from matriculas where idasignatura=? and idusuario=?");	
+			PreparedStatement ps = conexion
+					.prepareStatement("select * from matriculas where idasignatura=? and idusuario=?");
 			ps.setInt(1, idasignatura);
 			ps.setInt(2, idusuario);
 			ResultSet rs = ps.executeQuery();
@@ -125,12 +157,11 @@ public class Matricula {
 				st.close();
 				conexion.close();
 				return true;
-		} 
-		}
-		catch (Exception e) {
+			}
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return false;
 	}
-	
+
 }

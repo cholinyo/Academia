@@ -82,6 +82,33 @@ public class Asignatura {
 		}
 		return listaAsignaturas;
 	}
+	public static LinkedList<Asignatura> getAsignaturasProfe(int idprofesor) { //
+		LinkedList<Asignatura> listaAsignaturas = new LinkedList<Asignatura>();
+		try {
+			Class.forName("org.gjt.mm.mysql.Driver");
+			Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost/dbacademia", "root", "root");
+			Statement st = conexion.createStatement();
+			PreparedStatement ps = conexion.prepareStatement("select * from asignaturas where Profesor=?");
+	        ps.setInt(1,idprofesor);
+	        ResultSet rs = ps.executeQuery(); 
+			while (rs.next()) {
+				Asignatura asignatura = new Asignatura();
+				asignatura.setIdasignatura(rs.getInt("idasignatura"));
+				asignatura.setNombre(rs.getString("nombre"));
+				asignatura.setHorario(rs.getString("horario"));
+				asignatura.setProfesor(rs.getInt("profesor"));
+				asignatura.setEstado(rs.getString("estado"));
+
+				listaAsignaturas.add(asignatura);
+			}
+			rs.close();
+			st.close();
+			conexion.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return listaAsignaturas;
+	}
 	
 	public static Asignatura getAsignatura(int id) {
 		Asignatura asignatura = new Asignatura();
