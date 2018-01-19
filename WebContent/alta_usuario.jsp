@@ -4,12 +4,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" type="text/css" href="css/theme.css">
-<!-- Bootstrap CSS -->
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
 	integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
 	crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="css/theme.css"">
+<script src="js/funciones.js" type="text/javascript"></script>
 <title>Alta usuario</title>
 </head>
 
@@ -22,39 +22,39 @@
 			</div>
 			<div class="panel panel-body">
 				<div>
-					<form class="form-horizontal" action="graba_usuario" method="post">
+					<form class="form-horizontal" name="formulario" action="graba_usuario" method="post">
 						<div class="form-group">
 							<label class="col-sm-2" for="login">Usuario</label>
 							<div class="col-sm-10">
-								<input type="text" name="login" id="login" placeholder="Usuario">
+								<input type="text" name="login" id="login" placeholder="Usuario" required>
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="col-sm-2" for="password">Contraseña</label>
 							<div class="col-sm-10">
 								<input type="password" name="password" id="password"
-									placeholder="Password">
+									placeholder="Password" required>
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-sm-2" for="password">Contraseña</label>
+							<label class="col-sm-2" for="password" >Contraseña</label>
 							<div class="col-sm-10">
 								<input type="password" name="password2" id="password2"
-									placeholder="Repite password">
+									placeholder="Repite password" required>
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="col-sm-2" for="text">Nombre</label>
 							<div class="col-sm-10">
 								<input type="text" name="nombre" id="nombre"
-									placeholder="Nombre">
+									placeholder="Nombre" required>
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="col-sm-2" for="text">Apellidos</label>
 							<div class="col-sm-10">
 								<input type="text" name="apellidos" id="apellidos"
-									placeholder="Apellidos">
+									placeholder="Apellidos" required>
 							</div>
 						</div>
 						<div class="form-group">
@@ -72,7 +72,7 @@
 							</div>
 						</div>
 						<button type="submit" class="btn btn-default">Atrás</button>
-						<button type="submit" class="btn btn-default" onclick="alert("Atras")>Enviar</button>
+						<button type="submit" class="btn btn-default" onclick="comprobarPassword()">Enviar</button>
 						
 					</form>
 				</div>
