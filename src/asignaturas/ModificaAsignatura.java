@@ -87,6 +87,9 @@ public class ModificaAsignatura extends HttpServlet {
 				pstmt.setString(4,estado);
 				pstmt.setInt(5,id);
 				int rs = pstmt.executeUpdate();
+				
+				pstmt.close();
+				conexion.close();
 				response.sendRedirect("zona_privada.jsp");
 				
 			}

@@ -79,6 +79,9 @@ public class ModificaUsuario extends HttpServlet {
 				pstmt.setString(5,rol);
 				pstmt.setString(6,idusuario);
 				int rs = pstmt.executeUpdate();
+				
+				pstmt.close();
+				conexion.close();
 				response.sendRedirect("zona_privada.jsp");
 				
 			}

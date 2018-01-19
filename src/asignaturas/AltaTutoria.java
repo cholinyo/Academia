@@ -80,6 +80,8 @@ public class AltaTutoria extends HttpServlet {
 				pstmt.setString(2, dia);
 				pstmt.setInt(3, hora);
 				int rs = pstmt.executeUpdate();
+				pstmt.close();
+				conexion.close();
 				response.sendRedirect("zona_privada.jsp");
 			} catch (SQLException e) {
 				e.printStackTrace();

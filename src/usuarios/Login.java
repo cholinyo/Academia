@@ -76,6 +76,9 @@ public class Login extends HttpServlet {
 					
 					response.sendRedirect("index.html");
 				}
+				rs.close();
+				pstmt.close();
+				conexion.close();  
 				
 			}
 			catch (SQLException e) {

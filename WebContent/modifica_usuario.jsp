@@ -12,6 +12,7 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
 	integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
 	crossorigin="anonymous">
+	<script src="js/funciones.js" type="text/javascript"></script>
 <title>Modifica usuario</title>
 </head>
 <body>
@@ -27,7 +28,7 @@
 					<h2>Modifica usuario</h2>
 				</div>
 				<div class="panel panel-body">
-					<form class="form-horizontal" action="modifica_usuario"
+					<form class="form-horizontal" action="modifica_usuario" onsubmit="return comprobarPassword();"
 						method="post">
 						<div class="form-group">
 							<label class="col-sm-2" for="login">Id Usuario</label>
@@ -39,7 +40,7 @@
 						<div class="form-group">
 							<label class="col-sm-2" for="login">Usuario</label>
 							<div class="col-sm-10">
-								<input type="text" name="login" id="login"
+								<input type="text" name="login" id="login" readonly="readonly"
 									value="<%=user.getLogin()%>">
 							</div>
 						</div>
@@ -60,7 +61,7 @@
 						<div class="form-group">
 							<label class="col-sm-2" for="text">Nombre</label>
 							<div class="col-sm-10">
-								<input type="text" name="nombre" id="nombre"
+								<input type="text" name="nombre" id="nombre" required
 									value="<%=user.getNombre()%>">
 							</div>
 						</div>
@@ -68,7 +69,7 @@
 							<label class="col-sm-2" for="text">Apellidos</label>
 							<div class="col-sm-10">
 								<input type="text" name="apellidos" id="apellidos"
-									value="<%=user.getApellido()%>">
+									value="<%=user.getApellido()%>" required>
 							</div>
 						</div>
 						<!--Comprobamos si es estudiante o proferos mara marcar el rol-->
@@ -115,7 +116,9 @@
 							break;
 							}
 						%>
+						<button type="submit" class="btn btn-default"onclick="history.back()">Atrás</button>
 						<button type="submit" class="btn btn-default">Enviar</button>
+						
 					</form>
 				</div>
 			</div>

@@ -76,6 +76,8 @@ public class DesmatriculaAlumno extends HttpServlet {
 				//*pstmt.setString(3, activo);
 				int rs = pstmt.executeUpdate();
 				/*out.println(rs);*/
+				pstmt.close();
+				conexion.close();
 				String url = ("id="+idasignatura);
 				response.sendRedirect("eliminaralumnos.jsp?"+url);
 			}

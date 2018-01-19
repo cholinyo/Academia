@@ -79,6 +79,8 @@ public class GrabaUsuario extends HttpServlet {
 				pstmt.setString(4,apellidos); 
 				pstmt.setString(5,rol); 
 				pstmt.setString(6,"no"); 
+				pstmt.close();
+				conexion.close();
 				int rs = pstmt.executeUpdate();
 				response.sendRedirect("zona_privada.jsp");
 			}

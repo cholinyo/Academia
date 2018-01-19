@@ -65,6 +65,8 @@ public class AnulaTutoria extends HttpServlet {
 				PreparedStatement pstmt = conexion.prepareStatement(qry);
 				pstmt.setString(1,idtutoria); 
 				int rs = pstmt.executeUpdate();
+				pstmt.close();
+				conexion.close();
 				String url = ("gestionartutorias.jsp?id="+idprofesor);
 				response.sendRedirect(url);
 			}

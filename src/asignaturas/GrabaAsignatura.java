@@ -73,6 +73,9 @@ public class GrabaAsignatura extends HttpServlet {
 				pstmt.setString(3, profesor);
 				pstmt.setString(4, "alta");
 				int rs = pstmt.executeUpdate();
+				
+				pstmt.close();
+				conexion.close();
 				/* out.println(rs); */
 				response.sendRedirect("zona_privada.jsp");
 			} catch (SQLException e) {

@@ -67,6 +67,8 @@ private DataSource fuente_datos = null;
 					break;
 				}
 				int rs = pstmt.executeUpdate();
+				pstmt.close();
+				conexion.close();
 				response.sendRedirect("zona_privada.jsp"); 		
 			}
 			catch (SQLException e){

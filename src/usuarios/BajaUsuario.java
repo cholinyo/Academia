@@ -57,7 +57,10 @@ public class BajaUsuario extends HttpServlet {
 				PreparedStatement pstmt = conexion.prepareStatement(qry);
 				pstmt.setString(1,idusuario);
 				int rs = pstmt.executeUpdate();
+				pstmt.close();
+				conexion.close();
 				response.sendRedirect("zona_privada.jsp");
+				
 				
 			}
 			catch (SQLException e) {

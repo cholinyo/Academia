@@ -105,6 +105,7 @@ public class Tutorias {
 				tutoria.setDia(rs.getString("dia"));
 				tutoria.setHora(rs.getString("hora")) ;				
 			}
+			ps.close();
 			rs.close();
 			conexion.close();
 		} catch (Exception e) {

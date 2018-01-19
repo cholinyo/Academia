@@ -86,7 +86,10 @@ public class AltaPeticionTutoria extends HttpServlet {
 				pstmt.setString(5, "pendiente");
 				pstmt.setString(6, observaciones);
 				int rs = pstmt.executeUpdate();
+				pstmt.close();
+				conexion.close();
 				response.sendRedirect("zona_privada.jsp");
+				
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}

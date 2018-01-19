@@ -22,7 +22,7 @@
 			</div>
 			<div class="panel panel-body">
 				<div>
-					<form class="form-horizontal" name="formulario" action="graba_usuario" method="post">
+					<form class="form-horizontal" name="formulario" onsubmit="return comprobarPassword();" action="graba_usuario" method="post" >
 						<div class="form-group">
 							<label class="col-sm-2" for="login">Usuario</label>
 							<div class="col-sm-10">
@@ -71,10 +71,11 @@
 								</fieldset>
 							</div>
 						</div>
-						<button type="submit" class="btn btn-default">Atrás</button>
-						<button type="submit" class="btn btn-default" onclick="comprobarPassword()">Enviar</button>
+						<button type="submit" class="btn btn-default"onclick="history.back()">Atrás</button>
+						<button type="submit" class="btn btn-default"  >Enviar</button>
 						
 					</form>
+					
 				</div>
 			</div>
 		</div>
