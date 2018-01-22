@@ -1,5 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%String rol = (String) session.getAttribute("rol");
+switch (rol)
+{
+case "estudiante":
+	break;
+default:
+	response.sendRedirect("index.html");
+}
+%>
 <div class="container">
 	<div class="col-rs 12 panel panel-default ">
 		<div class="panel-heading">

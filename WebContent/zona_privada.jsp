@@ -3,7 +3,7 @@
 	pageEncoding="UTF-8"%>
 
 <%
-	if (session.getAttribute("login") == null) {
+	if (session.getAttribute("login") == null){
 		response.sendRedirect("index.html");
 	}
 	String nombre = (String) session.getAttribute("nombre");
@@ -19,6 +19,7 @@
 	crossorigin="anonymous">
 </head>
 <body>
+	
 	<jsp:include page="Vista/cabecera.jsp" />
 	<%
 		String rol = (String) session.getAttribute("rol");
@@ -26,7 +27,7 @@
 		case "admin":
 	%>
 	<jsp:include page="opciones_admin.jsp" />
-	<jsp:include page="listado_ultimos_usuarios.jsp" />;
+	<jsp:include page="listado_ultimos_usuarios.jsp" />
 	<%
 		break;
 		case "profesor":
@@ -45,16 +46,5 @@
 	%>
 	</navigation>
 </body>
-<footer class="container">
-	<div class="links_footer col-sm-6">
-		<ul>
-			<li>Sobre Nosotros</li>
-			<li>Privacidad</li>
-			<li>Accesibilidad</li>
-			<li>legale</li>
-		</ul>
-		<div class="datos_footer col-sm-6">
-			<img>
-		</div>
-</footer>
+<jsp:include page="Vista/pie.jsp" />
 </html>

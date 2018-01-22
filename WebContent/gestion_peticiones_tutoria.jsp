@@ -7,12 +7,15 @@
 <%@ page import="java.util.LinkedList"%>
 <%@ page import="usuarios.Usuario"%>
 <%@ page import="usuarios.ConsultaUsuarios"%>
+<head>
+<script type="text/javascript" src="js/sorttable.js"></script>
+</head>
 <body>
 	<div class="panel-heading">
 		<h3>Peticiones de tutorias realizadas</h3>
 	</div>
 	<div class="panel panel-body">	
-	<table class="table table-striped">
+	<table class="table table-striped sortable">
 		<tr>
 			<th>Id Peticion</th>
 			<th>Alumno</th>

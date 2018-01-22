@@ -103,6 +103,7 @@
 								%>
 							</div>
 						</div>
+						<button type="submit" class="btn btn-default"onclick="history.back()">Atrás</button>
 						<button type="submit" class="btn btn-default">Modificar
 							Asignatura</button>
 					</form>

@@ -57,6 +57,7 @@ public class ModificaAsignatura extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/plain");
 		Connection conexion=null;
 		synchronized (fuente_datos) {

@@ -51,6 +51,7 @@ public class GrabaAsignatura extends HttpServlet {
 		// TODO Auto-generated method stub
 		// TODO Auto-generated method stub
 		// doGet(request, response);
+		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/plain");
 		Connection conexion = null;
 		synchronized (fuente_datos) {

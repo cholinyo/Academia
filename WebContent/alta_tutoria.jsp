@@ -48,7 +48,8 @@
 					<input type="hidden" name="idprofesor" id="idprofesor" value="<%= session.getAttribute("id_usuario") %>">
 					<div class="form-group">
 						<div class="col-sm-10">
-							<input type="submit" value="Alta">
+						<button type="submit" class="btn btn-default"onclick="history.back()">Atrás</button>
+							<input type="submit" class="btn btn-default" value="Alta">
 						</div>
 					</div>
 				</form>

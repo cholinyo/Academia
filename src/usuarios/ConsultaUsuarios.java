@@ -119,4 +119,63 @@ public class ConsultaUsuarios {
 	      }
 	      return usuario;
 	   }
+
+	public static LinkedList<Usuario> getUsuariostipopPag(String tipo, int pagina)
+	   {
+	      LinkedList<Usuario> listaUsuarios=new LinkedList<Usuario>();
+	      try
+	      {
+	    	  	Class.forName("org.gjt.mm.mysql.Driver");
+	    	  	Connection conexion = DriverManager.getConnection ("jdbc:mysql://localhost/dbacademia","root", "root");
+	        Statement st = conexion.createStatement();
+	        ResultSet rs = st.executeQuery("select * from usuarios where baja='no' AND rol='" + tipo + "' LIMIT "+ (pagina-1)*5 + ",5;");
+	         while (rs.next())
+	         {
+	            Usuario usuario = new Usuario();
+	            usuario.setIdusuario(rs.getInt("idusuario"));
+	            usuario.setLogin(rs.getString("login"));
+	            usuario.setNombre(rs.getString("nombre"));
+	            usuario.setApellido(rs.getString("apellidos"));
+	            usuario.setRol(rs.getString("rol"));
+	            listaUsuarios.add(usuario);
+	         }
+	         rs.close();
+	         st.close();
+	         conexion.close();
+	      }
+	      catch (Exception e)
+	      {
+	         e.printStackTrace();
+	      }
+	      return listaUsuarios;
+	   }
+	public static LinkedList<Usuario> gettodosUsuariostipo(String tipo)
+	   {
+	      LinkedList<Usuario> listaUsuarios=new LinkedList<Usuario>();
+	      try
+	      {
+	    	  	Class.forName("org.gjt.mm.mysql.Driver");
+	    	  	Connection conexion = DriverManager.getConnection ("jdbc:mysql://localhost/dbacademia","root", "root");
+	        Statement st = conexion.createStatement();
+	        ResultSet rs = st.executeQuery("select * from usuarios where rol='" + tipo + "'");
+	         while (rs.next())
+	         {
+	            Usuario usuario = new Usuario();
+	            usuario.setIdusuario(rs.getInt("idusuario"));
+	            usuario.setLogin(rs.getString("login"));
+	            usuario.setNombre(rs.getString("nombre"));
+	            usuario.setApellido(rs.getString("apellidos"));
+	            usuario.setRol(rs.getString("rol"));
+	            listaUsuarios.add(usuario);
+	         }
+	         rs.close();
+	         st.close();
+	         conexion.close();
+	      }
+	      catch (Exception e)
+	      {
+	         e.printStackTrace();
+	      }
+	      return listaUsuarios;
+	   }
 }

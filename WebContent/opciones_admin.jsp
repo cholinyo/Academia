@@ -19,7 +19,7 @@
 					<div class="panel-body">
 						<ul class="list-inline">
 							<li><a href="alta_usuario.jsp">Altas usuarios<img src=""></a></li>
-							<li><a href="listado_usuarios.jsp?tipo=estudiante">Gestion
+							<li><a href="listado_usuarios_pag.jsp?tipo=estudiante">Gestion
 									de Alumnos<img src="">
 							</a></li>
 							<li><a href="listado_usuarios.jsp?tipo=profesor">Gestion

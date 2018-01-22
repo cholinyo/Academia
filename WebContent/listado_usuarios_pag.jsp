@@ -50,6 +50,12 @@ default:
 							out.println("<h2>Profesores introducidos en el sistema </h2>");
 							break;
 						}
+					int pagina=0;
+					String p = request.getParameter("page");  //nº de página
+					if (p!=null) pagina = Integer.valueOf(p);
+					else pagina=1;
+					LinkedList<Usuario> lista = ConsultaUsuarios.getUsuariostipopPag(rol,pagina);				
+					
 					%>
 				</div>
 				<table class="table table-striped sortable">
@@ -63,7 +69,6 @@ default:
 						<th>Dar de baja</th>
 					</tr>
 					<%
-						LinkedList<Usuario> lista = ConsultaUsuarios.getUsuariostipo(rol);
 						for (int i = 0; i < lista.size(); i++) {
 							out.println("<tr>");
 							out.println("<td>" + lista.get(i).getIdusuario() + "</td>");
@@ -78,9 +83,34 @@ default:
 						}
 					%>
 				</table>
-				
+				<%
+				LinkedList<Usuario> rs = ConsultaUsuarios.gettodosUsuariostipo(rol);
+				int contador=0;
+				for (int i = 0; i < rs.size(); i++){
+					contador ++;
+				}
+				out.println(contador);
+				int pages = (contador / 5);
+				%>
+				<table>
+				<%
+				if (pagina > 1){
+					out.println("<td><a href=\'?page=1&tipo="+rol+"\'> << </a></td>");
+					int previousPage = pagina - 1;
+					out.println("<td><a href=\"?page="+previousPage + "&tipo="+rol+"\"> < </a></td>");
+				}
+					out.println("<td><b>Page: "+ pagina + "</b></td>");
+					
+					if (pages > pagina){
+						int nextPage = pagina + 1;
+						out.println("<td><a href=\"?page="+ nextPage + "&tipo="+rol+"\"> > </a></td>");
+						out.println("<td><a href=\"?page="+ pages +"&tipo="+rol+ "\"> " + " >> </a></td>");
+									
+				}
+				%>
+				</tr></table>
 			</div>
-			<button type="submit" class="btn btn-default"onclick="history.back()">Atrás</button>
+			<button type="submit" class="btn btn-default"onclick="location.href = 'zona_privada.jsp'">Atrás</button>
 		</div>
 	</div>
 

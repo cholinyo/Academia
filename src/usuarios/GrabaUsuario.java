@@ -60,6 +60,7 @@ public class GrabaUsuario extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//doGet(request, response);
+		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/plain");
 		Connection conexion=null;
 		synchronized (fuente_datos) {
@@ -79,9 +80,10 @@ public class GrabaUsuario extends HttpServlet {
 				pstmt.setString(4,apellidos); 
 				pstmt.setString(5,rol); 
 				pstmt.setString(6,"no"); 
+				
+				int rs = pstmt.executeUpdate();
 				pstmt.close();
 				conexion.close();
-				int rs = pstmt.executeUpdate();
 				response.sendRedirect("zona_privada.jsp");
 			}
 			catch (SQLException e) {

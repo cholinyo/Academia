@@ -17,8 +17,13 @@
 <title>Listado alumnos matriculados</title>
 </head>
 <body>
+<div class="container">
 	<jsp:include page="Vista/cabecera.jsp" />
-	<table class="table table-striped">
+	<div class="col-rs 12 panel panel-default ">
+			<div class="panel-heading">
+		<h2>Alumnos matriculados en la asignatura</h2>
+		</div>
+	<table class="table table-striped sortable">
 		<tr>
 			<th>Código matricula</th>
 			<th>Idusuario</th>
@@ -44,5 +49,10 @@
 			out.println("</tr>");	
 		}
 	%>
+	</table>
+	
+	</div>
+	<button type="submit" class="btn btn-default"onclick="history.back()">Atrás</button>
+	</div>
 </body>
 </html>

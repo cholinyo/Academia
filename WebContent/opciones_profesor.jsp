@@ -1,5 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+	<%String rol = (String) session.getAttribute("rol");
+switch (rol)
+{
+case "profesor":
+	break;
+default:
+	response.sendRedirect("index.html");
+}
+%>
 	<div class="container">
 	<div class="col-rs 12 panel panel-default ">
 		<div class="panel-heading">
@@ -20,12 +29,12 @@
 						<li><a href="gestionartutorias.jsp?idprofesor=<%=session.getAttribute("id_usuario")%>">Gesionar Tutorias<img
 								src=""></a></li>
 					</ul>
+				
 				</div>
 			</div>
-			<div class="seleccion col-rs-4 panel panel-default">
-
-
-							<jsp:include page="gestion_peticiones_tutoria.jsp" />
+				<div class="seleccion col-rs-4 panel panel-default">
+					<jsp:include page="gestion_peticiones_tutoria.jsp" />
+			
 				</div>
 			</div>
 		</div>

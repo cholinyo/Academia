@@ -1,13 +1,14 @@
 <footer class="container">
-		<div class="links_footer col-sm-6">
-		<ul class="list-inline">
-			<li>Sobre Nosotros</li>
-			<li>Privacidad</li>
-			<li>Accesibilidad</li>
-			<li>Aviso Legal </li>
-		</ul >
 		<div class="datos_footer col-sm-6">
-			<img >
+			<img class="imagen_pie" src="images/pie2.png"">
 		</div>
+		<div class="links_footer col-sm-6">
+			<ul class="list-inline">
+				<li><a href="#"> Sobre Nosotros</a></li>
+				<li><a href="#">Privacidad</a></li>
+				<li><a href="#">Accesibilidad</a></li>
+				<li><a href="#">Aviso Legal</a></li>
+			</ul>
 		</div>
-</footer>
+
+	</footer>

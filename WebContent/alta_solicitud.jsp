@@ -71,6 +71,7 @@
 					}
 				%>
 			</div>
+			<button type="submit" class="btn btn-default"onclick="location.href = 'zona_privada.jsp'">Atrás</button>
 		</div>
 	</div>
 

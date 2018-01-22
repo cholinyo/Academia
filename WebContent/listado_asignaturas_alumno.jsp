@@ -57,6 +57,7 @@
 %>
 			</table>
 		</div>
+		<button type="submit" class="btn btn-default"onclick="history.back()">Atrás</button>
 	</div>
 </div>
 <jsp:include page="Vista/pie.jsp" />
